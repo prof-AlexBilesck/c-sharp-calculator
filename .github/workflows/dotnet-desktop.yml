@@ -23,3 +23,10 @@ jobs:
 
       - name: Restaurar dependências e compilar
         run: msbuild "Calculadora/Calculadora.csproj" /restore /p:Configuration=Release
+
+      - name: Disponibilizar a calculadora
+        uses: actions/upload-artifact@v4
+        with:
+          name: Calculadora
+          path: Calculadora/bin/Release/
+          if-no-files-found: error
