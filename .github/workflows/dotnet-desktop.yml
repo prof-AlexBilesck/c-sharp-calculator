@@ -1,0 +1,25 @@
+name: Compilar calculadora
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v6
+
+      - name: Configurar MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restaurar dependências e compilar
+        run: msbuild Calculadora.csproj /restore /p:Configuration=Release
