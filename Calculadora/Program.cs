@@ -65,6 +65,7 @@ namespace Calculadora
             }
 
             Console.WriteLine($"Resultado: {resultado}");
+            Console.ReadLine();
         }
     }
 }
