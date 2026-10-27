@@ -1,3 +1,3 @@
 # c-sharp-calculator
 
-Calculadora simples feita com c#
+Calculadora simples feita com c#.
